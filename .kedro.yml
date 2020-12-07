@@ -1,0 +1,6 @@
+context_path: gks_test.run.ProjectContext
+project_name: "gks_test_proj"
+project_version: "0.16.6"
+package_name: "gks_test"
+hooks:
+  - gks_test.hooks.project_hooks

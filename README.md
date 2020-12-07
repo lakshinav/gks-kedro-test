@@ -1,5 +1,11 @@
 # gks_test_proj
 
+## My notes
+This project contains simple model for unemployment prediction. 
+It's a test project for learning Kedro during "ML in production" course at HSE.
+By now master contains code up to the 3rd lesson where API for ML model is deployed.
+
+
 ## Overview
 
 This is your new Kedro project, which was generated using `Kedro 0.16.6`.

@@ -2,6 +2,9 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lakshinav/gks-kedro-test?sort=semver)
 
+![GH](https://img.shields.io/github/manifest-json/v/lakshinav/gks-kedro-test)
+
+
 ## My notes
 This project contains simple model for unemployment prediction. 
 It's a test project for learning Kedro during "ML in production" course at HSE.

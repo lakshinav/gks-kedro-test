@@ -4,7 +4,8 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lakshinav/gks-kedro-test?sort=semver)
 -->
 
-![](https://github.com/lakshinav/gks-kedro-test/workflows/CI/badge.svg)
+![CI](https://github.com/lakshinav/gks-kedro-test/workflows/CI/badge.svg)
+![Tests](https://github.com/lakshinav/gks-kedro-test/workflows/Tests/badge.svg?branch=master)
 
 
 ## My notes

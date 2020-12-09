@@ -1,13 +1,15 @@
 # gks_test_proj
 
+<!--
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lakshinav/gks-kedro-test?sort=semver)
+-->
 
 ![](https://github.com/lakshinav/gks-kedro-test/workflows/CI/badge.svg)
 
 
 ## My notes
 This project contains simple model for unemployment prediction. 
-It's a test project for learning Kedro during "ML in production" course at HSE.
+It's a test project for learning Kedro during "ML in production" course at HSE, [repo](https://github.com/NameArtem/deployml_course).
 By now master contains code up to the 3rd lesson where API for ML model is deployed.
 
 

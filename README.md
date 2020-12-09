@@ -2,7 +2,7 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lakshinav/gks-kedro-test?sort=semver)
 
-![GH](https://img.shields.io/github/manifest-json/v/lakshinav/gks-kedro-test)
+![](https://github.com/lakshinav/gks-kedro-test/workflows/CI/badge.svg)
 
 
 ## My notes

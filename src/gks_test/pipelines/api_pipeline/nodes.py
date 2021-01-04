@@ -16,7 +16,6 @@ def make_prediction(n, pred_num, model):
     # импорты в функции
 
     predict = model.predict(n+pred_num, n+pred_num)
-
     return predict
 
 

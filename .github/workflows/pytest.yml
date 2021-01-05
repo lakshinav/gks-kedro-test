@@ -27,7 +27,7 @@ jobs:
 #         python -m pip install --upgrade pip
 #         pip install flake8 pytest
 #         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-  # this Action should follow steps to set up Python build environment
+  # the code above didn't see requirements.txt, so I use action for installing dependencies:
     - name: Install Python dependencies
       uses: py-actions/py-dependency-install@v2
       with:
@@ -49,5 +49,5 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
-        gcov_path_exclude: ./kedro_cli.py, ./runner.py
+        ignore: ./kedro_cli.py, ./runner.py
     

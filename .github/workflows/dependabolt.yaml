@@ -1,0 +1,17 @@
+name: Dependabolt
+on:
+  push:
+  pull_request:
+jobs:
+  dependabolt:
+    runs-on: ubuntu-latest
+    steps:
+    - id: checkout_action
+      if: github.event.ref_type == 'branch' && startsWith(github.event.ref, 'dependabot/')
+      uses: actions/checkout@v1
+    - name: Run dependabolt
+      uses: malept/github-action-dependabolt@main
+      with:
+        gitCommitUser: Dependabolt Bot
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

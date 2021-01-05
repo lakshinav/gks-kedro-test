@@ -22,11 +22,19 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#     - name: Install dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install flake8 pytest
+#         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+  # this Action should follow steps to set up Python build environment
+    - name: Install Python dependencies
+      uses: py-actions/py-dependency-install@v2
+      with:
+        update-pip: "true"
+        update-setuptools: "false"
+        update-wheel: "false"
+        path: "src/requirements.txt"
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

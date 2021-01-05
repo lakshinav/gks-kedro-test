@@ -8,6 +8,7 @@
 ![MissPell](https://github.com/lakshinav/gks-kedro-test/workflows/MissPell/badge.svg?branch=master)
 ![Code review](https://github.com/lakshinav/gks-kedro-test/workflows/Code%20review/badge.svg?branch=master)
 ![Tests](https://github.com/lakshinav/gks-kedro-test/workflows/Tests/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/lakshinav/gks-kedro-test/branch/master/graph/badge.svg?token=78ARJGEZT5)](https://codecov.io/gh/lakshinav/gks-kedro-test)
 
 
 

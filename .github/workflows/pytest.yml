@@ -49,4 +49,5 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
-      
+        gcov_path_exclude: ./kedro_cli.py, ./runner.py
+    

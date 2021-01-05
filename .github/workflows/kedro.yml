@@ -17,3 +17,11 @@ jobs:
       uses: WaylonWalker/kedro-action@2.0.0
       with:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }} # required for push to kedro-action branch
+        should_lint: true
+        should_test: true
+        should_build_docs: false
+        should_package: false
+        should_run: false
+        should_viz: true
+        deploy_branch: kedro-action
+        verbose: false

@@ -44,7 +44,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov=./src --cov-report=xml
-    - name: Upload coverage to Codecov
+    - name: Upload coverage to Codecov # send to Codecov.io and see coverage percents
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}

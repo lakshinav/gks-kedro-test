@@ -1,4 +1,4 @@
-# gks_test_proj
+# gks project
 
 <!--
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lakshinav/gks-kedro-test?sort=semver)

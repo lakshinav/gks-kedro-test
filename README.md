@@ -6,7 +6,7 @@
 
 ![dependabolt](https://github.com/lakshinav/gks-kedro-test/workflows/Dependabolt/badge.svg?branch=master)
 ![missPell](https://github.com/lakshinav/gks-kedro-test/workflows/MissPell/badge.svg?branch=master)
-![code review](https://github.com/lakshinav/gks-kedro-test/workflows/Code%20review/badge.svg?branch=master)
+![code review](https://github.com/lakshinav/gks-kedro-test/workflows/code%20review/badge.svg?branch=master)
 ![testsing](https://github.com/lakshinav/gks-kedro-test/workflows/Tests/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/lakshinav/gks-kedro-test/branch/master/graph/badge.svg?token=78ARJGEZT5)](https://codecov.io/gh/lakshinav/gks-kedro-test)
 

@@ -1,4 +1,5 @@
 # gks-kedro-test
+
 Repo for "ML in production" course at HSE, branch for deployment code.
 Course [repo](https://github.com/NameArtem/deployml_course).
 This project is on Python 3.8, kedro 0.16.6.
@@ -7,6 +8,8 @@ Below `./` is the project folder.
 The whole project includes the following steps:
 
 0. Setup kedro project
+
+  0.0 `source bin/activate` in terminal to activate kedro environment
   
   0.1 `kedro new` in terminal
   
@@ -22,11 +25,11 @@ The whole project includes the following steps:
   
   1.3 ./conf/base/parameters.yml: constant values in nodes and pipelines
 
-2. Add API to communicate model predictions
+2. Add API to communicate model predictions (based on FastAPI and uvicorn)
   
   2.1 Add pipeline for prediction
   
-  2.2 Add pipeline for getting data from server, predict and sent (API pipeline)
+  2.2 Add pipeline for getting data from server, predict and sent to port 6789 (API pipeline)
   
   2.3 Don't forget to add new pipelines to ./src/project_name/hooks.py
   
@@ -36,13 +39,29 @@ The whole project includes the following steps:
     
     2.4.2 file, where these data are saved
     
-    2.4.2 file, where predictions are saved
+    2.4.3 file, where predictions are saved
   
   2.5 In data vault create server app, which send data to 127.0.0.1/9876/data (post or get) and save them to file 2.4.2
   
-  2.6 Create ./runner.py, which get data from 127.0.0.1/9876/data and send it to prediction pipeline 2.1
+  2.6 Create ./runner.py, which get data from 127.0.0.1/9876/data, pass it to prediction pipeline 2.1 and send to 0.0.0.0:6789/<model_name>/predictor
   
-  2.7 In data vault create receiver.py, which send the request (post or get, the same as in 2.5) to 
+  2.7 In data vault create receiver.py, which send the request (post or get, the same as in 2.5) to 127.0.0.1:6789/<model_name>/predictor, get prediction and save it to file 2.4.3
+  
+  2.8 Run API:
+    
+    2.8.1 `cd` to data vault, `python server_app.py` in terminal
+    
+    2.8.2 open new tab in terminal, activate kedro environment, `cd` to project folder and `python runner.py` in terminal
+    
+    2.8.3 open new tab in terminal, activate kedro environment, `cd` to data vault, `python receiver.py` in terminal
+  
+  2.9 Check API
+  
+    2.9.1 Go to 127.0.0.1:9876 and you should see data from 2.4.1
+    
+    2.9.2 
+  
+  
     
     
     

@@ -5,6 +5,8 @@ Course [repo](https://github.com/NameArtem/deployml_course).
 This project is on Python 3.8, kedro 0.16.6.
 Below `./` is the project folder.
 
+# Walkthrough
+
 The whole project includes the following steps:
 
 0. Setup kedro project
@@ -24,6 +26,8 @@ The whole project includes the following steps:
   1.2 ./data and ./conf/base/catalog.yml: datasets used in pipelines
   
   1.3 ./conf/base/parameters.yml: constant values in nodes and pipelines
+  
+  1.4 If you need the project graph, `kedro viz` in terminal; the scheme will be on 127.0.0.1:4141
 
 2. Add API to communicate model predictions (based on FastAPI and uvicorn)
   
@@ -57,15 +61,42 @@ The whole project includes the following steps:
   
   2.9 Check API
   
-    2.9.1 Go to 127.0.0.1:9876 and you should see data from 2.4.1
+    2.9.1 Go to 127.0.0.1:9876/data and you should see data from 2.4.1
     
-    2.9.2 
+    2.9.2 Go to 127.0.0.1:6789/doc and try to request prediction (if it's post, not get)
+    
+    2.9.3 If everything is ok, you'll see predictions in data vault, in file 2.4.3
+
+3. Testing
   
+  3.1 Write tests in ./src/tests; use `hypothesis`
+  
+  3.2 Run `kedro test` and see the testing results and coverage
+  
+  3.3 If you need coverage report: `kedro test --cov=src --verbose`; `.coverage` file appears in ./
+  
+  3.4 If you need report in html: `kedro test --html=report.html --self-contained-html`; `report.html` file appears in ./
+
+4. Github actions
+
+  4.1 dependabolt
+  
+  4.2 MissPell
+  
+  4.3 tests
+  
+  4.4 codecov
+  
+5. Docker
   
     
     
     
-    server add, which 
+If you need particular version of python to run kedro, you can use `venv` to create envinronment and `poetry` to install dependencies.
+
+1. Define command for the python version needed: `$ alias python3.8 pold` 
+
+1. Create env for python 3.8: `$ pold -m venv kedro_env`
 
 1. Define and install dependencies.
 We use [poetry](https://python-poetry.org/) to resolve dependencies and create `requirements.txt` file.

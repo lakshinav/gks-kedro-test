@@ -9,7 +9,20 @@ Below `./` is the project folder.
 
 The whole project includes the following steps:
 
-0. Setup kedro project
+0. Check your python version and if you need particular version of python to run kedro, you can use `venv` to create envinronment and `poetry` to install dependencies.
+
+  1. Define command for the python version needed: `$ alias python3.8 pold` 
+
+  1. Create env for python 3.8: `$ pold -m venv kedro_env`
+
+  1. Define and install dependencies, e.g. kedro (or something else if needed)
+We use [poetry](https://python-poetry.org/) to resolve dependencies and create `requirements.txt` file.
+```bash
+$ poetry init # create just pyproject.toml w/o project folder structure
+$
+```
+
+1. Setup kedro project
 
   0.0 `source bin/activate` in terminal to activate kedro environment
   
@@ -89,24 +102,12 @@ The whole project includes the following steps:
   
 5. Docker
   
+  5.1 Create Dockerfile in ./ and fullfill it (I take from [here](https://github.com/NameArtem/deployml_course/blob/main/p6/Dockerfile))
+  5.1 Start docker daemon by `sudo systemctl start docker.service` in terminal
+  5.2 Build docker image by `sudo docker build ./ -t <image_tag>`
+  5.2 Run image by `sudo docker run --name <container_name> --network="host" <image_tag>`; this `--network="host"`is needed if you want to run server app (see 2.5 and 2.8.1) on localhost and grab data from server from inside docker container (more details [here](https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach#:~:text=docker run --network="host"))
+After that you should observe the same behaviour as in 2.9 with the only difference that runner.py works inside docker container.
+  
     
     
-    
-If you need particular version of python to run kedro, you can use `venv` to create envinronment and `poetry` to install dependencies.
 
-1. Define command for the python version needed: `$ alias python3.8 pold` 
-
-1. Create env for python 3.8: `$ pold -m venv kedro_env`
-
-1. Define and install dependencies.
-We use [poetry](https://python-poetry.org/) to resolve dependencies and create `requirements.txt` file.
-```bash
-$ poetry init # create just pyproject.toml w/o project folder structure
-$
-```
-
-2. Run nginx and serv_app.py on it to serve data to the model (arma_fit).
-
-```bash
-$ sudo docker container run -p 80:80 nginx
-```
